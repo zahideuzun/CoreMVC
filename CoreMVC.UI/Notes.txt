@@ -1,0 +1,40 @@
+﻿-> HttpContext coreda da var. 
+
+-> statemanagement viewbag, viewstate, viewdata,tempdata,
+
+- cookie 
+- application
+- session .netten farkli kullanimi var.
+- querystring 
+
+bu 4 statemanagement 
+
+core olmasi platform bagimsiz calismayi saglar. cross bi platform.
+
+
+Microsoftta IIS üzerinden sunum yapilir. Coreda ISS üzerinden de calisabilir degistirebilirim de. KestrelWeb sunucu üzerinden de deneyebilirim. 
+
+request ve response mimarisi üzerine kurulur. bunlarin arasinda IIS yönetimi yapmaz. Coreda!!!! Baska platformlarda kullanilacaksa kestrelweb kullanmam gerekir!! 
+
+Request KestrelWeb Response -> page life cycle 
+
+core mvcde dependency injection default olarak gelmistir. 
+IOS default olarak geliyor. 
+
+.net mvcden aynen aktarilanlar: 
+routing, filter, validation, helpers, model binding, partialview, layout, async controller action,
+
+.net mvcde startup kullanilmasi icin ovin kutuphanesini indirmen gerekiyor. orda da kullanabiliriz yani!! 
+
+
+coreda gelen:  
+-> startup cs, middleware, tag helpers, view component,DI, 
+
+-> coreda globalasax yok. burada startup yapar bunu. her request icin startup calisir. globalasaxtaki gibi bir kere calisip bitmez. 
+o yuzden burayi efektif kullanmam gerekir. 
+
+startup.cs projeye IConfiguration yetenegi kazandirarak baslatir. 
+bu interface appsettings....json kullandirir.
+
+request geldigi anda responselarim devreye girmeden startup devreye girer. 
+nugetten bir sey indirdigimde (fe kutuphaneleri haric) gidip startupta kullanacagimi söylemem gerek. 
